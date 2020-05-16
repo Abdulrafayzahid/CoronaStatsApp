@@ -1,0 +1,16 @@
+body{
+    background-color: aliceblue;
+}
+
+.container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1{
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 80px;
+    font-weight: 600;
+}
