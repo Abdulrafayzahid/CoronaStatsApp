@@ -17,7 +17,7 @@ const Chart = ({data:{confirmed, recovered, deaths}, country}) => {
         fetchApi();
     },[])
     // console.log(dailyData)
-
+    console.log([confirmed?.value, recovered?.value, deaths?.value]);
     const lineChart = (
         dailyData[0] ? 
         <Line 
@@ -46,12 +46,15 @@ const Chart = ({data:{confirmed, recovered, deaths}, country}) => {
                 <Bar 
                     data={{
                         labels: ['Infected', 'Recovered', 'Deaths'],
-                        backgroundColor: [
-                            'rgba(0, 0, 255, 0.5)',
-                            'rgba(0, 255, 0, 0.5)', 
-                            'rgba(255, 0, 0, 0.5)',
-                        ],
-                        data:[confirmed.value, recovered.value, deaths.value]    
+                        
+                        datasets:[{
+                            data:[confirmed.value, recovered.value, deaths.value],
+                            backgroundColor: [
+                                'rgba(0, 0, 255, 0.5)',
+                                'rgba(0, 255, 0, 0.5)', 
+                                'rgba(255, 0, 0, 0.5)',
+                            ],
+                        }]    
                     }}
 
                     options={{
